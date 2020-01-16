@@ -18,7 +18,7 @@ var createButton = function() {
 
 
 $("#submit").on("click", function(){
-    event.preventDefault();
+    event.apventDefault();
     var inputVal = $("#buttonCreate").val().trim();
     gifSelection.push(inputVal);
     console.log(inputVal);
@@ -32,7 +32,6 @@ $(document).on("click", ".gifButton", function() {
     var buttonSelect = $(this).attr("value")
     console.log(buttonSelect);
 
-    var movie = buttonSelect;
     var apiKey = "Ptje1aKgDLlEbocNFZqUE7a8u8zBo7wf";
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + buttonSelect + "&api_key=" + apiKey + "&limit=10";
 
@@ -46,13 +45,13 @@ $(document).on("click", ".gifButton", function() {
         for (var i = 0; i < response.data.length; i++) {
             var div = $("<div>");
             div.addClass("imgDump");
+            div.attr("id", "imgDiv-" + i);
 
             var img = $("<img>");
             img.attr("src", response.data[i].images.fixed_height_still.url);
             img.attr("data-still", response.data[i].images.fixed_height_still.url);
             img.attr("data-animate", response.data[i].images.fixed_height.url)
             img.attr("data-state", "still")
-            // img.attr("data-state", "animate");
             img.addClass("gifs");
 
             var rate = $("<p>");
@@ -60,7 +59,7 @@ $(document).on("click", ".gifButton", function() {
             rate.text(response.data[i].rating);
 
             var favButton = $("<button>");
-            favButton.addClass("favorite");
+            favButton.attr("id", "favorite-" + i);
             favButton.text("Favorite");
 
             div.append(img);
@@ -70,12 +69,19 @@ $(document).on("click", ".gifButton", function() {
             $("#imgDump").append(div);
 
         };
+
+        $(".favorite").on("click", function() {
+            var favorite = $(this).parent("id", "imgDiv-5");
+            $("#favImgDump").append(favorite);
+            console.log(favorite);
+        });
+
     });
 
 });
 
 $(document).on("click", ".gifs", function() {
-    event.preventDefault();
+    event.apventDefault();
     var state = $(this).attr("data-state");
 
     if (state == "still") {
@@ -86,3 +92,8 @@ $(document).on("click", ".gifs", function() {
         $(this).attr("data-state", "still");
     }
 });
+
+// $(document).on("click", ".favorite", function() {
+//     var favorite = $(this).parent("div");
+//     $(".favImgDump").append(div);
+// });

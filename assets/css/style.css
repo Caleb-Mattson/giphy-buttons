@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
+.imgDump {
+    position: relative;
+    float: left;
+    margin: 20px;
+}
