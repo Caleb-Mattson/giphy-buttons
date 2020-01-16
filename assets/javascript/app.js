@@ -18,7 +18,7 @@ var createButton = function() {
 
 
 $("#submit").on("click", function(){
-    event.apventDefault();
+    event.preventDefault();
     var inputVal = $("#buttonCreate").val().trim();
     gifSelection.push(inputVal);
     console.log(inputVal);
@@ -70,11 +70,11 @@ $(document).on("click", ".gifButton", function() {
 
         };
 
-        $(".favorite").on("click", function() {
-            var favorite = $(this).parent("id", "imgDiv-5");
-            $("#favImgDump").append(favorite);
-            console.log(favorite);
-        });
+        // $(".favorite").on("click", function() {
+        //     var favorite = $(this).parent("id", "imgDiv-5");
+        //     $("#favImgDump").append(favorite);
+        //     console.log(favorite);
+        // });
 
     });
 
