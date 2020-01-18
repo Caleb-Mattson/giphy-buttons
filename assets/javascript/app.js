@@ -1,4 +1,4 @@
-var gifSelection =["community", "miracle workers", "third rock from the sun", "ap bio", "avatar the last airbender", "the witcher", "vikings"];
+var gifSelection =["Community", "Miracle Workers", "Third Rock from the Sun", "AP Bio", "Avatar the Last Airbender", "The Witcher", "Vikings"];
 
 // on click function to add the input value inside the form and run the createButton function
 
@@ -24,6 +24,7 @@ $("#submit").on("click", function(){
     gifSelection.push(inputVal);
     console.log(inputVal);
     createButton();
+    $("#buttonCreate").val("")
 });
 
 // empty out the imgDump div of gifs

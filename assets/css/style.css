@@ -1,9 +1,100 @@
-* {
+/* * {
     box-sizing: border-box;
+} */
+
+html { 
+    background: url("../images/Production-Crew1.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+body {
+    margin-left: 30px;
+}
+
+.gifButton {
+    margin: 10px;
+    margin-bottom: 10px;
+}
+
+.gifButton:first-child {
+    margin-left: 0;
+}
+
+label {
+    background: white;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: black solid 2px;
+    
+}
+
+input {
+    border: solid black 2px;
+    padding: 5px;
 }
 
 .imgDump {
     position: relative;
     float: left;
     margin: 20px;
+    margin-left: 0;
 }
+
+#imgDump {
+    padding: 10px;
+}
+
+.rated {
+    background: white;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    margin-top: 5px;
+    border: black 1px solid;
+}
+
+h1 {
+    margin: 20px;
+    text-align: center;
+    font-size: 36px;
+}
+
+button {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    margin: 10px;
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-left: 50px;
+    border: solid black 1px;
+}
+
+button:hover,
+button:focus,
+button:active {
+    box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+    transform: scale(1.2);
+    background: rgb(164, 186, 226);
+    font-weight: bold;
+}
+
+#submit,
+#clear {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+#button {
+    padding: 20px;
+    padding-left: 0px;
+}
+
